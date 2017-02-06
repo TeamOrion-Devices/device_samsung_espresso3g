@@ -18,8 +18,8 @@
 TARGET_SCREEN_HEIGHT := 480
 TARGET_SCREEN_WIDTH := 600
 
-# Inherit common LineageOS configuration
-$(call inherit-product, vendor/cm/config/common_full_phone.mk)
+# Inherit common OrionOS configuration
+$(call inherit-product, vendor/orion/config/common_full_phone.mk)
 
 # LineageOS specific overlay
 DEVICE_PACKAGE_OVERLAYS += device/samsung/espresso3g/overlay/cm
@@ -29,7 +29,10 @@ DEVICE_PACKAGE_OVERLAYS += device/samsung/espressowifi/overlay/cm-common
 $(call inherit-product, device/samsung/espresso3g/aosp_espresso3g.mk)
 
 # Device identifier. This must come after all inclusions
-PRODUCT_NAME := lineage_espresso3g
+PRODUCT_NAME := orion_espresso3g
+
+# Device maintainer
+PRODUCT_BUILD_PROP_OVERRIDES := DEVICE_MAINTAINERS="Gianmarco Scarano (SlimShady's)"
 
 # Packages
 PRODUCT_PACKAGES += \
